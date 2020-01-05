@@ -1,3 +1,8 @@
-FROM centos:7
+FROM python:3
 
-CMD ["echo", "hoge"]
+WORKDIR /testapp
+CMD ["python", "./app.py"]
+
+ADD app /testapp
+
+RUN pip install -r requirements.txt
